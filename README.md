@@ -18,7 +18,7 @@ Quality control and trimming of paired-end Illumina reads for *Pyricularia penni
 
 ## Project Overview
 
-Brief description of the project goals and biological context.
+This repository documents quality assessment, trimming, and basic read statistics for paired-end Illumina sequencing data from *Pyricularia pennisetigena* strain Pp371. The goal is to generate a cleaned dataset suitable for downstream analyses (e.g., genome assembly) by identifying and mitigating common issues such as adapter contamination and end-of-read quality decay. All commands and parameters used are recorded to support reproducibility.
 
 ---
 
