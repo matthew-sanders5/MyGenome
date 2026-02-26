@@ -24,3 +24,22 @@ This repository documents quality assessment, trimming, and basic read statistic
 
 ## Raw Data Acquisition
 
+Will add pub level detail
+
+---
+
+### Assess Sequence Quality
+
+This is a summary of the flags from the untrimmed sequences. This will be updated for publication polish, but documenting now.
+
+```
+Pp371_1.fq.gz
+```
+Yellow Flags: Per tile sequence quality, Per base sequence content, Per sequence GC content
+Red Flags: Overrepresented sequences, Adapter Content
+
+```
+Pp371_2.fq.gz
+```
+Yellow Flags: Per tile sequence quality, Per sequence GC content, Overrepresented sequences
+Red Flags: Per base sequence content, Adapter Content
