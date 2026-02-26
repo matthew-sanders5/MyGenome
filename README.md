@@ -43,3 +43,41 @@ Pp371_2.fq.gz
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Overrepresented sequences
 Red Flags: Per base sequence content, Adapter Content
+
+---
+
+## Sequence Trimming
+
+Will add exact code for using the trimmer tool as described by manual
+
+---
+
+## Post-Trim Quality Assessment
+
+This is a summary of the flags from the untrimmed sequences. This will be updated for publication polish, but documenting now.
+
+```
+Pp371_1_paired.fastq
+```
+Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+Red Flags: None
+
+```
+Pp371_2_paired.fastq
+```
+Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution, Adapter Content
+Red Flags: None
+
+```
+Pp371_1_unpaired.fastq
+```
+Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+Red Flags: None
+
+```
+Pp371_2_unpaired.fastq
+```
+Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+Red Flags:Per base sequence content, Adapter Content
+
+---
