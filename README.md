@@ -28,7 +28,7 @@ Will add pub level detail
 
 ---
 
-### Assess Sequence Quality
+## Assess Sequence Quality
 
 This is a summary of the flags from the untrimmed sequences. This will be updated for publication polish, but documenting now.
 
