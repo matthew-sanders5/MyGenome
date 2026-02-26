@@ -41,7 +41,7 @@ Error (Red) Flags: Overrepresented sequences, Adapter Content
 
 Summary:
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.png)
+![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.jpg)
 
 ```
 Pp371_2.fq.gz
