@@ -36,12 +36,14 @@ This is a summary of the flags from the untrimmed sequences. This will be update
 Pp371_1.fq.gz
 ```
 Orange Flags: Per tile sequence quality, Per base sequence content, Per sequence GC content
+
 Red Flags: Overrepresented sequences, Adapter Content
 
 ```
 Pp371_2.fq.gz
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Overrepresented sequences
+
 Red Flags: Per base sequence content, Adapter Content
 
 ---
@@ -60,24 +62,28 @@ This is a summary of the flags from the untrimmed sequences. This will be update
 Pp371_1_paired.fastq
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+
 Red Flags: None
 
 ```
 Pp371_2_paired.fastq
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution, Adapter Content
+
 Red Flags: None
 
 ```
 Pp371_1_unpaired.fastq
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+
 Red Flags: None
 
 ```
 Pp371_2_unpaired.fastq
 ```
 Orange Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
+
 Red Flags:Per base sequence content, Adapter Content
 
 ---
