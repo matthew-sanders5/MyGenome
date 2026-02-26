@@ -39,6 +39,10 @@ Warning (Orange) Flags: Per tile sequence quality, Per base sequence content, Pe
 
 Error (Red) Flags: Overrepresented sequences, Adapter Content
 
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.png)
+
 ```
 Pp371_2.fq.gz
 ```
