@@ -37,37 +37,63 @@ Will add pub level detail
 
 ## Assess Sequence Quality
 
-This is a summary of the flags from the untrimmed sequences. This will be updated for publication polish, but documenting now.
+Raw paired-end reads were evaluated using FastQC prior to trimming. All warning (orange) and error (red) flags are summarized below.
+
+---
+
+<details>
+<summary><strong>Pp371_1.fq.gz (Raw Forward Reads)</strong></summary>
 
 ```
 Pp371_1.fq.gz
 ```
-Warning (Orange) Flags: Per tile sequence quality, Per base sequence content, Per sequence GC content
 
-Error (Red) Flags: Overrepresented sequences, Adapter Content
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per base sequence content  
+- Per sequence GC content  
 
-Summary:
+**Error (Red) Flags**
+- Overrepresented sequences  
+- Adapter Content  
+
+### Summary Tab
 
 ![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.jpg)
 
-Adapter Content:
+### Adapter Content Tab
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_adaptercontent.jpg)
+![FastQC Sequence 1 adapter content before trimming](images/sequence_1_raw_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_2.fq.gz (Raw Reverse Reads)</strong></summary>
 
 ```
 Pp371_2.fq.gz
 ```
-Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Overrepresented sequences
 
-Error (Red) Flags: Per base sequence content, Adapter Content
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Overrepresented sequences  
 
-Summary:
+**Error (Red) Flags**
+- Per base sequence content  
+- Adapter Content  
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_raw_summary.jpg)
+### Summary Tab
 
-Adapter Content:
+![FastQC Sequence 2 summary before trimming](images/sequence_2_raw_summary.jpg)
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_raw_adaptercontent.jpg)
+### Adapter Content Tab
+
+![FastQC Sequence 2 adapter content before trimming](images/sequence_2_raw_adaptercontent.jpg)
+
+</details>
 
 ---
 
