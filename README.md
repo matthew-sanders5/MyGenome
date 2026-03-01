@@ -1,6 +1,6 @@
 # MyGenome
 
-Quality control and trimming of paired-end Illumina reads for *Pyricularia pennisetigena* Pp371.
+Quality control, trimming, and de novo genome assembly of paired-end Illumina reads for *Pyricularia pennisetigena* Pp371.
 
 ---
 
@@ -12,13 +12,20 @@ Quality control and trimming of paired-end Illumina reads for *Pyricularia penni
 4. [Sequence Trimming](#sequence-trimming)
 5. [Post-Trim Quality Assessment](#post-trim-quality-assessment)
 6. [Read Statistics](#read-statistics)
-7. [Directory Structure](#directory-structure)
+7. [Genome Assembly Strategy](#genome-assembly-strategy)
+8. [K-mer Selection and Optimization](#k-mer-selection-and-optimization)
+9. [Velvet Assembly (Round 1)](#velvet-assembly-round-1)
+10. [Velvet Assembly (Round 2 Optimization)](#velvet-assembly-round-2-optimization)
+11. [SPAdes Assembly](#spades-assembly)
+12. [Assembly Metrics Comparison](#assembly-metrics-comparison)
+13. [Assembly Graph Visualization (Bandage)](#assembly-graph-visualization-bandage)
+14. [Directory Structure](#directory-structure)
 
 ---
 
 ## Project Overview
 
-This repository documents quality assessment, trimming, and basic read statistics for paired-end Illumina sequencing data from *Pyricularia pennisetigena* strain Pp371. The goal is to generate a cleaned dataset suitable for downstream analyses (e.g., genome assembly) by identifying and mitigating common issues such as adapter contamination and end-of-read quality decay. All commands and parameters used are recorded to support reproducibility.
+This repository documents quality assessment, trimming, and genome assembly of paired-end Illumina sequencing data from *Pyricularia pennisetigena* strain Pp371. The goal is to generate a cleaned dataset suitable for de novo genome assembly and evaluate assembly quality using multiple tools and metrics (genome size, contig count, N50, and graph structure).
 
 ---
 
@@ -66,7 +73,17 @@ Adapter Content:
 
 ## Sequence Trimming
 
-Will add exact code for using the trimmer tool as described by manual
+Reads were trimmed using Trimmomatic in paired-end mode.
+
+```
+java -jar trimmomatic.jar PE \
+-phred33 \
+Pp371_1.fq.gz Pp371_2.fq.gz \
+Pp371_1_paired.fastq Pp371_1_unpaired.fastq \
+Pp371_2_paired.fastq Pp371_2_unpaired.fastq \
+ILLUMINACLIP:adaptors.fa:2:30:10 \
+SLIDINGWINDOW:20:20 MINLEN:125
+```
 
 ---
 
@@ -134,5 +151,36 @@ Adapter Content:
 
 ![FastQC Sequence 1 summary before trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
 
+---
+
+## Genome Assembly Strategy
+
+---
+
+## K-mer Selection and Optimization
+
+---
+
+## Velvet Assembly (Round 1)
+
+---
+
+## Velvet Assembly (Round 2 Optimization)
+
+---
+
+## SPAdes Assembly
+
+---
+
+## Assembly Metrics Comparison
+
+---
+
+## Assembly Graph Visualization (Bandage)
+
+---
+
+## Directory Structure
 
 ---
