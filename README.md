@@ -43,12 +43,24 @@ Summary:
 
 ![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.jpg)
 
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_adaptercontent.jpg)
+
 ```
 Pp371_2.fq.gz
 ```
 Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Overrepresented sequences
 
 Error (Red) Flags: Per base sequence content, Adapter Content
+
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_raw_summary.jpg)
+
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_raw_adaptercontent.jpg)
 
 ---
 
