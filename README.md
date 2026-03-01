@@ -81,12 +81,28 @@ Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequ
 
 Error (Red) Flags: None
 
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_pairedtrim_summary.jpg)
+
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_pairedtrim_adaptercontent.jpg)
+
 ```
 Pp371_2_paired.fastq
 ```
 Waring (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution, Adapter Content
 
 Error (Red) Flags: None
+
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_pairedtrim_summary.jpg)
+
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_pairedtrim_adaptercontent.jpg)
 
 ```
 Pp371_1_unpaired.fastq
@@ -95,11 +111,28 @@ Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequ
 
 Error (Red) Flags: None
 
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_unpairedtrim_summary.jpg)
+
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_unpairedtrim_adaptercontent.jpg)
+
 ```
 Pp371_2_unpaired.fastq
 ```
 Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
 
 Error (Red) Flags:Per base sequence content, Adapter Content
+
+Summary:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_unpairedtrim_summary.jpg)
+
+Adapter Content:
+
+![FastQC Sequence 1 summary before trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
+
 
 ---
