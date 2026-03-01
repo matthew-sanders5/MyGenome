@@ -115,67 +115,117 @@ SLIDINGWINDOW:20:20 MINLEN:125
 
 ## Post-Trim Quality Assessment
 
-This is a summary of the flags from the untrimmed sequences. This will be updated for publication polish, but documenting now.
+Trimmed paired and unpaired reads were reassessed using FastQC. All warning (orange) and error (red) flags are summarized below.
+
+---
+
+<details>
+<summary><strong>Pp371_1_paired.fastq (Trimmed Forward Paired Reads)</strong></summary>
 
 ```
 Pp371_1_paired.fastq
 ```
-Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
 
-Error (Red) Flags: None
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
 
-Summary:
+**Error (Red) Flags**
+- None  
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_pairedtrim_summary.jpg)
+### Summary Tab
 
-Adapter Content:
+![FastQC Sequence 1 paired summary after trimming](images/sequence_1_pairedtrim_summary.jpg)
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_pairedtrim_adaptercontent.jpg)
+### Adapter Content Tab
+
+![FastQC Sequence 1 paired adapter content after trimming](images/sequence_1_pairedtrim_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_2_paired.fastq (Trimmed Reverse Paired Reads)</strong></summary>
 
 ```
 Pp371_2_paired.fastq
 ```
-Waring (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution, Adapter Content
 
-Error (Red) Flags: None
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
+- Adapter Content  
 
-Summary:
+**Error (Red) Flags**
+- None  
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_pairedtrim_summary.jpg)
+### Summary Tab
 
-Adapter Content:
+![FastQC Sequence 2 paired summary after trimming](images/sequence_2_pairedtrim_summary.jpg)
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_pairedtrim_adaptercontent.jpg)
+### Adapter Content Tab
+
+![FastQC Sequence 2 paired adapter content after trimming](images/sequence_2_pairedtrim_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_1_unpaired.fastq (Trimmed Forward Unpaired Reads)</strong></summary>
 
 ```
 Pp371_1_unpaired.fastq
 ```
-Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
 
-Error (Red) Flags: None
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
 
-Summary:
+**Error (Red) Flags**
+- None  
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_unpairedtrim_summary.jpg)
+### Summary Tab
 
-Adapter Content:
+![FastQC Sequence 1 unpaired summary after trimming](images/sequence_1_unpairedtrim_summary.jpg)
 
-![FastQC Sequence 1 summary before trimming](images/sequence_1_unpairedtrim_adaptercontent.jpg)
+### Adapter Content Tab
+
+![FastQC Sequence 1 unpaired adapter content after trimming](images/sequence_1_unpairedtrim_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_2_unpaired.fastq (Trimmed Reverse Unpaired Reads)</strong></summary>
 
 ```
 Pp371_2_unpaired.fastq
 ```
-Warning (Orange) Flags: Per tile sequence quality, Per sequence GC content, Sequence Length Distribution
 
-Error (Red) Flags:Per base sequence content, Adapter Content
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
 
-Summary:
+**Error (Red) Flags**
+- Per base sequence content  
+- Adapter Content  
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_unpairedtrim_summary.jpg)
+### Summary Tab
 
-Adapter Content:
+![FastQC Sequence 2 unpaired summary after trimming](images/sequence_2_unpairedtrim_summary.jpg)
 
-![FastQC Sequence 1 summary before trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
+### Adapter Content Tab
+
+![FastQC Sequence 2 unpaired adapter content after trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
+
+</details>
 
 ---
 
