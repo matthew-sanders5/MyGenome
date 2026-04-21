@@ -302,7 +302,8 @@ done < lengths.txt
 
 ## Assembly Graph Visualization (Bandage)
 
-![Bandage Graph Example](images/bandage_graph.png)
+![Bandage Graph Single-Node Example](images/Bandage singular node.png)
+![Bandage Graph Full Example](images/images/Bandage full.png)
 
 ---
 
