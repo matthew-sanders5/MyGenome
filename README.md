@@ -1,6 +1,6 @@
 # MyGenome
 
-Quality control, trimming, and de novo genome assembly of paired-end Illumina reads for *Pyricularia pennisetigena* Pp371.
+Quality control, trimming, de novo genome assembly, gene prediction, and genome annotation of paired-end Illumina reads for *Pyricularia pennisetigena* Pp371.
 
 ---
 
@@ -31,7 +31,7 @@ Quality control, trimming, and de novo genome assembly of paired-end Illumina re
 
 ## Project Overview
 
-This repository documents quality assessment, trimming, and genome assembly of paired-end Illumina sequencing data from *Pyricularia pennisetigena* strain Pp371. The goal is to generate a cleaned dataset suitable for de novo genome assembly and evaluate assembly quality using multiple tools and metrics (genome size, contig count, N50, and graph structure).
+This repository documents an end-to-end bioinformatics workflow for *Pyricularia pennisetigena* strain Pp371, including sequence quality assessment, read trimming, de novo genome assembly, gene prediction, genome annotation, and visualization. The goal is to generate a high-quality genome assembly and produce biologically meaningful gene models using multiple complementary tools. Assembly quality was evaluated using standard metrics (genome size, contig count, N50, and graph structure), and gene predictions were generated using SNAP, AUGUSTUS, and MAKER, with results visualized in IGV.
 
 ---
 
