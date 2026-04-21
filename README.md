@@ -308,13 +308,13 @@ done < lengths.txt
 
 ## Directory Structure
 
-
+```
 Pp371/
 ├── data/
 ├── code/
 ├── images/
 └── results/
-
+```
 
 ---
 
