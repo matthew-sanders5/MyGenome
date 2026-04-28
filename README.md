@@ -239,8 +239,11 @@ Pp371_2_unpaired.fastq
 
 ---
 
-## K-mer Selection and Optimization
+## Genome Assembly Strategy
+*De novo* genome assembly was performed using both Velvet and SPAdes to compare assembly performance. Multiple k-mer sizes were tested to optimize contiguity and reduce fragmentation in the final assembly.
 
+## K-mer Selection and Optimization
+K-mer size was a critical parameter in de novo assembly, as it influenced both contig length and assembly accuracy. A range of k-mer values was tested to identify the optimal balance between contiguity and error reduction.
 ```
 velvetoptimiser -s <low_k> -e <high_k> -x 10
 -d Pp371_assembly
@@ -274,6 +277,7 @@ sbatch spades.sh . Pp371
 ---
 
 ## Assembly Metrics Comparison
+Assembly quality was evaluated using standard metrics including genome size, number of contigs, and N50. These metrics provided insight into assembly completeness and fragmentation.
 
 ### N50 Calculation
 
@@ -284,6 +288,7 @@ grep -v ">" scaffolds.fasta | awk '{print length($0)}' | sort -nr
 ---
 
 ## Read and Assembly Statistics
+Final assembly statistics indicated a high-quality genome assembly with strong contiguity and completeness, supported by a high BUSCO score.
 
 ### Read Summary
 
@@ -345,6 +350,7 @@ Pp371/
 ---
 
 ## SNAP HMM Training
+SNAP required a trained Hidden Markov Model (HMM) to accurately predict gene structures. The model was trained using annotated gene data from a related organism to capture species-specific gene features.
 
 ```
 maker2zff B71Ref2.gff3
@@ -358,7 +364,7 @@ hmm-assembler.pl Moryzae . > Moryzae.hmm
 
 ## Gene Prediction Strategy
 
-Gene prediction was performed using SNAP, AUGUSTUS, and MAKER.
+Gene prediction was performed using both *ab initio* methods (SNAP and AUGUSTUS) and evidence-based annotation (MAKER) to improve accuracy and reduce false predictions.
 
 ---
 
@@ -382,7 +388,7 @@ Pp371ID_final.fasta > Pp371ID-augustus.gff3
 ---
 
 ## Gene Prediction Summary
-
+Comparisons between SNAP and AUGUSTUS predictions provided insight into model agreement and highlighted regions of uncertainty in gene structure prediction.
 ```
 grep -c "gene" Pp371-snap.gff2
 grep -c "gene" Pp371ID-augustus.gff3
@@ -396,7 +402,7 @@ grep -c "gene" Pp371ID-augustus.gff3
 ---
 
 ## Genome Annotation with MAKER
-
+MAKER integrated multiple sources of evidence, including *ab initio* predictions and external data, to generate high-confidence gene models.
 ```
 gff3_merge -d Pp371ID_final.maker.output/Pp371ID_final_master_datastore_index.log
 -o Pp371ID-maker.gff3
@@ -405,7 +411,7 @@ gff3_merge -d Pp371ID_final.maker.output/Pp371ID_final_master_datastore_index.lo
 ---
 
 ## MAKER Gene Prediction Summary
-
+The final MAKER annotation produced a comprehensive set of predicted proteins consistent with expectations for fungal genomes.
 ```
 grep -c "gene" Pp371ID-maker.gff3
 grep -c ">" Pp371ID-maker.proteins.fasta
@@ -417,6 +423,7 @@ Results:
 ---
 
 ## IGV Gene Model Comparisons
+Visualization in IGV allowed direct comparison of gene predictions across tools and provided evidence for agreement or disagreement in exon-intron structure.
 
 ![snap only](images/igv_snap_only.png)  
 ![aug only](images/igv_aug_only.png)  
@@ -427,6 +434,7 @@ Results:
 ---
 
 ## BLAST Analysis
+BLAST analysis was used to identify mitochondrial contigs by comparing the assembled genome to a reference mitochondrial sequence. Identified contigs were removed prior to submission.
 
 ```
 blastn -query MoMitochondrion.fasta
