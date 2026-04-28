@@ -46,6 +46,7 @@ Raw sequencing data for *Pp371* was obtained from the course dataset.
 ---
 
 ## Assess Sequence Quality
+Initial quality assessment revealed multiple issues in the raw sequencing data, including adapter contamination and base composition bias. These issues were expected in raw Illumina reads and required correction prior to assembly to avoid introducing errors into downstream analyses.
 
 Raw paired-end reads were evaluated using FastQC prior to trimming. All warning (orange) and error (red) flags are summarized below.
 
@@ -108,8 +109,7 @@ Pp371_2.fq.gz
 ---
 
 ## Sequence Trimming
-
-Reads were trimmed using Trimmomatic in paired-end mode.
+Trimmomatic was used to remove low-quality bases and adapter contamination. This step improved overall read quality and ensured that only high-confidence sequence data were used for genome assembly. Reads were trimmed using Trimmomatic in paired-end mode.
 
 ```
 java -jar trimmomatic.jar PE
@@ -125,7 +125,7 @@ SLIDINGWINDOW:20:20 MINLEN:125
 
 ## Post-Trim Quality Assessment
 
-Trimmed paired and unpaired reads were reassessed using FastQC. All warning (orange) and error (red) flags are summarized below.
+Following trimming, FastQC was re-run to confirm that major quality issues had been resolved. Adapter contamination was largely eliminated, and overall base quality improved, indicating that the dataset was suitable for assembly. All warning (orange) and error (red) flags are summarized below.
 
 ---
 
