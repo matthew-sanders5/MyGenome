@@ -47,43 +47,71 @@ Raw sequencing data for *Pp371* was obtained from the course dataset.
 
 ## Assess Sequence Quality
 
-Raw paired-end reads were evaluated using FastQC prior to trimming.
-
-### Pp371_1.fq.gz
-
-**Warnings:**
-- Per tile sequence quality  
-- Per base sequence content  
-- Per sequence GC content  
-
-**Errors:**
-- Overrepresented sequences  
-- Adapter content  
-
-![Sequence 1 summary](images/sequence_1_raw_summary.jpg)  
-![Sequence 1 adapters](images/sequence_1_raw_adaptercontent.jpg)
+Raw paired-end reads were evaluated using FastQC prior to trimming. All warning (orange) and error (red) flags are summarized below.
 
 ---
 
-### Pp371_2.fq.gz
+<details>
+<summary><strong>Pp371_1.fq.gz (Raw Forward Reads)</strong></summary>
 
-**Warnings:**
+
+Pp371_1.fq.gz
+
+
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per base sequence content  
+- Per sequence GC content  
+
+**Error (Red) Flags**
+- Overrepresented sequences  
+- Adapter Content  
+
+### Summary Tab
+
+![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 1 adapter content before trimming](images/sequence_1_raw_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_2.fq.gz (Raw Reverse Reads)</strong></summary>
+
+
+Pp371_2.fq.gz
+
+
+**Warning (Orange) Flags**
 - Per tile sequence quality  
 - Per sequence GC content  
 - Overrepresented sequences  
 
-**Errors:**
+**Error (Red) Flags**
 - Per base sequence content  
-- Adapter content  
+- Adapter Content  
 
-![Sequence 2 summary](images/sequence_2_raw_summary.jpg)  
-![Sequence 2 adapters](images/sequence_2_raw_adaptercontent.jpg)
+### Summary Tab
+
+![FastQC Sequence 2 summary before trimming](images/sequence_2_raw_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 2 adapter content before trimming](images/sequence_2_raw_adaptercontent.jpg)
+
+</details>
 
 ---
 
 ## Sequence Trimming
 
-```
+Reads were trimmed using Trimmomatic in paired-end mode.
+
+
 java -jar trimmomatic.jar PE
 -phred33
 Pp371_1.fq.gz Pp371_2.fq.gz
@@ -91,44 +119,123 @@ Pp371_1_paired.fastq Pp371_1_unpaired.fastq
 Pp371_2_paired.fastq Pp371_2_unpaired.fastq
 ILLUMINACLIP:adaptors.fa:2:30:10
 SLIDINGWINDOW:20:20 MINLEN:125
-```
+
 
 ---
 
 ## Post-Trim Quality Assessment
 
-### Pp371_1_paired.fastq
-
-Warnings:
-- Per tile sequence quality  
-- Per sequence GC content  
-- Sequence length distribution  
-
-Errors:
-- None  
-
-![Paired 1 summary](images/sequence_1_pairedtrim_summary.jpg)
+Trimmed paired and unpaired reads were reassessed using FastQC. All warning (orange) and error (red) flags are summarized below.
 
 ---
 
-### Pp371_2_paired.fastq
+<details>
+<summary><strong>Pp371_1_paired.fastq (Trimmed Forward Paired Reads)</strong></summary>
 
-Warnings:
+
+Pp371_1_paired.fastq
+
+
+**Warning (Orange) Flags**
 - Per tile sequence quality  
 - Per sequence GC content  
-- Sequence length distribution  
-- Adapter content  
+- Sequence Length Distribution  
 
-Errors:
+**Error (Red) Flags**
 - None  
 
-![Paired 2 summary](images/sequence_2_pairedtrim_summary.jpg)
+### Summary Tab
+
+![FastQC Sequence 1 paired summary after trimming](images/sequence_1_pairedtrim_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 1 paired adapter content after trimming](images/sequence_1_pairedtrim_adaptercontent.jpg)
+
+</details>
 
 ---
 
-## Genome Assembly Strategy
+<details>
+<summary><strong>Pp371_2_paired.fastq (Trimmed Reverse Paired Reads)</strong></summary>
 
-Genome assembly was performed using Velvet and SPAdes.
+
+Pp371_2_paired.fastq
+
+
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
+- Adapter Content  
+
+**Error (Red) Flags**
+- None  
+
+### Summary Tab
+
+![FastQC Sequence 2 paired summary after trimming](images/sequence_2_pairedtrim_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 2 paired adapter content after trimming](images/sequence_2_pairedtrim_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_1_unpaired.fastq (Trimmed Forward Unpaired Reads)</strong></summary>
+
+
+Pp371_1_unpaired.fastq
+
+
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
+
+**Error (Red) Flags**
+- None  
+
+### Summary Tab
+
+![FastQC Sequence 1 unpaired summary after trimming](images/sequence_1_unpairedtrim_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 1 unpaired adapter content after trimming](images/sequence_1_unpairedtrim_adaptercontent.jpg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Pp371_2_unpaired.fastq (Trimmed Reverse Unpaired Reads)</strong></summary>
+
+
+Pp371_2_unpaired.fastq
+
+
+**Warning (Orange) Flags**
+- Per tile sequence quality  
+- Per sequence GC content  
+- Sequence Length Distribution  
+
+**Error (Red) Flags**
+- Per base sequence content  
+- Adapter Content  
+
+### Summary Tab
+
+![FastQC Sequence 2 unpaired summary after trimming](images/sequence_2_unpairedtrim_summary.jpg)
+
+### Adapter Content Tab
+
+![FastQC Sequence 2 unpaired adapter content after trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
+
+</details>
 
 ---
 
