@@ -6,26 +6,30 @@ Quality control, trimming, de novo genome assembly, gene prediction, and genome 
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Raw Data Acquisition](#raw-data-acquisition)
-3. [Assess Sequence Quality](#assess-sequence-quality)
-4. [Sequence Trimming](#sequence-trimming)
-5. [Post-Trim Quality Assessment](#post-trim-quality-assessment)
-6. [Read Statistics](#read-statistics)
-7. [Genome Assembly Strategy](#genome-assembly-strategy)
-8. [K-mer Selection and Optimization](#k-mer-selection-and-optimization)
-9. [Velvet Assembly (Round 1)](#velvet-assembly-round-1)
-10. [Velvet Assembly (Round 2 Optimization)](#velvet-assembly-round-2-optimization)
-11. [SPAdes Assembly](#spades-assembly)
-12. [Assembly Metrics Comparison](#assembly-metrics-comparison)
-13. [Assembly Graph Visualization (Bandage)](#assembly-graph-visualization-bandage)
-14. [Directory Structure](#directory-structure)
-15. [Gene Prediction Strategy](#gene-prediction-strategy)
-16. [Gene Prediction with SNAP](#gene-prediction-with-snap)
-17. [Gene Prediction with AUGUSTUS](#gene-prediction-with-augustus)
-18. [Genome Annotation with MAKER](#genome-annotation-with-maker)
-19. [IGV Visualization](#igv-visualization)
-20. [Final Notes](#final-notes)
+1. Project Overview  
+2. Raw Data Acquisition  
+3. Assess Sequence Quality  
+4. Sequence Trimming  
+5. Post-Trim Quality Assessment  
+6. Genome Assembly Strategy  
+7. K-mer Selection and Optimization  
+8. Velvet Assembly (Round 1)  
+9. Velvet Assembly (Round 2 Optimization)  
+10. SPAdes Assembly  
+11. Assembly Metrics Comparison  
+12. Read and Assembly Statistics  
+13. Assembly Graph Visualization (Bandage)  
+14. Directory Structure  
+15. SNAP HMM Training  
+16. Gene Prediction Strategy  
+17. Gene Prediction with SNAP  
+18. Gene Prediction with AUGUSTUS  
+19. Gene Prediction Summary  
+20. Genome Annotation with MAKER  
+21. MAKER Gene Prediction Summary  
+22. IGV Gene Model Comparisons  
+23. BLAST Analysis  
+24. Final Notes  
 
 ---
 
@@ -43,69 +47,41 @@ Raw sequencing data for *Pp371* was obtained from the course dataset.
 
 ## Assess Sequence Quality
 
-Raw paired-end reads were evaluated using FastQC prior to trimming. All warning (orange) and error (red) flags are summarized below.
+Raw paired-end reads were evaluated using FastQC prior to trimming.
 
----
+### Pp371_1.fq.gz
 
-<details>
-<summary><strong>Pp371_1.fq.gz (Raw Forward Reads)</strong></summary>
-
-```
-Pp371_1.fq.gz
-```
-
-**Warning (Orange) Flags**
+**Warnings:**
 - Per tile sequence quality  
 - Per base sequence content  
 - Per sequence GC content  
 
-**Error (Red) Flags**
+**Errors:**
 - Overrepresented sequences  
-- Adapter Content  
+- Adapter content  
 
-### Summary Tab
-
-![FastQC Sequence 1 summary before trimming](images/sequence_1_raw_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 1 adapter content before trimming](images/sequence_1_raw_adaptercontent.jpg)
-
-</details>
+![Sequence 1 summary](images/sequence_1_raw_summary.jpg)  
+![Sequence 1 adapters](images/sequence_1_raw_adaptercontent.jpg)
 
 ---
 
-<details>
-<summary><strong>Pp371_2.fq.gz (Raw Reverse Reads)</strong></summary>
+### Pp371_2.fq.gz
 
-```
-Pp371_2.fq.gz
-```
-
-**Warning (Orange) Flags**
+**Warnings:**
 - Per tile sequence quality  
 - Per sequence GC content  
 - Overrepresented sequences  
 
-**Error (Red) Flags**
+**Errors:**
 - Per base sequence content  
-- Adapter Content  
+- Adapter content  
 
-### Summary Tab
-
-![FastQC Sequence 2 summary before trimming](images/sequence_2_raw_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 2 adapter content before trimming](images/sequence_2_raw_adaptercontent.jpg)
-
-</details>
+![Sequence 2 summary](images/sequence_2_raw_summary.jpg)  
+![Sequence 2 adapters](images/sequence_2_raw_adaptercontent.jpg)
 
 ---
 
 ## Sequence Trimming
-
-Reads were trimmed using Trimmomatic in paired-end mode.
 
 ```
 java -jar trimmomatic.jar PE
@@ -121,129 +97,42 @@ SLIDINGWINDOW:20:20 MINLEN:125
 
 ## Post-Trim Quality Assessment
 
-Trimmed paired and unpaired reads were reassessed using FastQC. All warning (orange) and error (red) flags are summarized below.
+### Pp371_1_paired.fastq
 
----
-
-<details>
-<summary><strong>Pp371_1_paired.fastq (Trimmed Forward Paired Reads)</strong></summary>
-
-```
-Pp371_1_paired.fastq
-```
-
-**Warning (Orange) Flags**
+Warnings:
 - Per tile sequence quality  
 - Per sequence GC content  
-- Sequence Length Distribution  
+- Sequence length distribution  
 
-**Error (Red) Flags**
+Errors:
 - None  
 
-### Summary Tab
-
-![FastQC Sequence 1 paired summary after trimming](images/sequence_1_pairedtrim_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 1 paired adapter content after trimming](images/sequence_1_pairedtrim_adaptercontent.jpg)
-
-</details>
+![Paired 1 summary](images/sequence_1_pairedtrim_summary.jpg)
 
 ---
 
-<details>
-<summary><strong>Pp371_2_paired.fastq (Trimmed Reverse Paired Reads)</strong></summary>
+### Pp371_2_paired.fastq
 
-```
-Pp371_2_paired.fastq
-```
-
-**Warning (Orange) Flags**
+Warnings:
 - Per tile sequence quality  
 - Per sequence GC content  
-- Sequence Length Distribution  
-- Adapter Content  
+- Sequence length distribution  
+- Adapter content  
 
-**Error (Red) Flags**
+Errors:
 - None  
 
-### Summary Tab
-
-![FastQC Sequence 2 paired summary after trimming](images/sequence_2_pairedtrim_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 2 paired adapter content after trimming](images/sequence_2_pairedtrim_adaptercontent.jpg)
-
-</details>
-
----
-
-<details>
-<summary><strong>Pp371_1_unpaired.fastq (Trimmed Forward Unpaired Reads)</strong></summary>
-
-```
-Pp371_1_unpaired.fastq
-```
-
-**Warning (Orange) Flags**
-- Per tile sequence quality  
-- Per sequence GC content  
-- Sequence Length Distribution  
-
-**Error (Red) Flags**
-- None  
-
-### Summary Tab
-
-![FastQC Sequence 1 unpaired summary after trimming](images/sequence_1_unpairedtrim_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 1 unpaired adapter content after trimming](images/sequence_1_unpairedtrim_adaptercontent.jpg)
-
-</details>
-
----
-
-<details>
-<summary><strong>Pp371_2_unpaired.fastq (Trimmed Reverse Unpaired Reads)</strong></summary>
-
-```
-Pp371_2_unpaired.fastq
-```
-
-**Warning (Orange) Flags**
-- Per tile sequence quality  
-- Per sequence GC content  
-- Sequence Length Distribution  
-
-**Error (Red) Flags**
-- Per base sequence content  
-- Adapter Content  
-
-### Summary Tab
-
-![FastQC Sequence 2 unpaired summary after trimming](images/sequence_2_unpairedtrim_summary.jpg)
-
-### Adapter Content Tab
-
-![FastQC Sequence 2 unpaired adapter content after trimming](images/sequence_2_unpairedtrim_adaptercontent.jpg)
-
-</details>
+![Paired 2 summary](images/sequence_2_pairedtrim_summary.jpg)
 
 ---
 
 ## Genome Assembly Strategy
 
-Genome assembly was performed using both Velvet and SPAdes to compare performance and optimize contiguity.
+Genome assembly was performed using Velvet and SPAdes.
 
 ---
 
 ## K-mer Selection and Optimization
-
-A suitable k-mer length was estimated using Velvet Advisor and refined through iterative optimization.
 
 ```
 velvetoptimiser -s <low_k> -e <high_k> -x 10
@@ -265,7 +154,7 @@ sbatch velvetoptimiser.sh Pp371 <low_k> <high_k> 10
 
 ## Velvet Assembly (Round 2 Optimization)
 
-A second optimization round was performed using a narrower k-mer range centered around the optimal value.
+A second optimization round refined k-mer selection.
 
 ---
 
@@ -277,73 +166,47 @@ sbatch spades.sh . Pp371
 
 ---
 
+## Assembly Metrics Comparison
+
 ### N50 Calculation
 
 ```
-#!/bin/bash
-grep -v ">" scaffolds.fasta | awk '{print length($0)}' | sort -nr > lengths.txt
-
-total=$(awk '{sum+=$1} END {print sum}' lengths.txt)
-half=$(echo "$total / 2" | bc)
-
-cumsum=0
-while read len; do
-cumsum=$((cumsum + len))
-if [ $cumsum -ge $half ]; then
-echo "N50: $len"
-break
-fi
-done < lengths.txt
+grep -v ">" scaffolds.fasta | awk '{print length($0)}' | sort -nr
 ```
+
 ---
 
 ## Read and Assembly Statistics
 
-### Raw and Cleaned Read Summary
+### Read Summary
 
 | Metric | Value |
 |------|------|
-| Raw reads (single-end equivalent) | 8,717,309 |
-| Cleaned paired reads used | 5,382,335 |
-| Total bases (cleaned paired reads) | 1,704,936,709 |
-| Estimated fold coverage | 41x |
+| Raw reads | 8,717,309 |
+| Cleaned reads | 5,382,335 |
+| Total bases | 1,704,936,709 |
+| Coverage | 41x |
 
 ---
 
-### Assembly Optimization (Velvet)
+### Assembly Comparison
 
-| Parameter | Genome Size | # Contigs | N50 |
-|----------|------------|----------|-----|
-| Step = 10 | 41,045,916 | 6,101 | 26,110 |
-| Step = 2 (optimized) | 42,160,640 | 5,895 | 28,079 |
-
----
-
-### SPAdes Assembly
-
-| Assembly Type | Genome Size | # Contigs | N50 |
-|--------------|------------|----------|-----|
-| SPAdes (all reads) | 43,044,503 | 14,414 | 57,168 |
-| SPAdes (paired only) | 42,028,789 | 5,302 | 69,821 |
+| Assembly | Genome Size | Contigs | N50 |
+|----------|------------|--------|-----|
+| Velvet (step=10) | 41,045,916 | 6,101 | 26,110 |
+| Velvet (step=2) | 42,160,640 | 5,895 | 28,079 |
+| SPAdes | 43,044,503 | 14,414 | 57,168 |
+| SPAdes (paired) | 42,028,789 | 5,302 | 69,821 |
+| Final | 41,745,607 | 3,003 | 69,820 |
 
 ---
 
-### Final Cleaned Assembly
+### BUSCO
 
 | Metric | Value |
 |------|------|
-| Genome size | 41,745,607 |
-| # contigs | 3,003 |
-| N50 | 69,820 |
-
----
-
-### Assembly Quality (BUSCO)
-
-| Metric | Value |
-|------|------|
-| BUSCO completeness | 98.4% |
-| BUSCO complete + fragmented | 98.5% |
+| Complete | 98.4% |
+| Complete + Fragmented | 98.5% |
 
 ---
 
@@ -352,15 +215,13 @@ done < lengths.txt
 | Metric | Value |
 |------|------|
 | Predicted proteins | 12,990 |
-| GFF deposited (MCC) | Yes |
-| Protein FASTA deposited (MCC) | Yes |
 
 ---
 
 ## Assembly Graph Visualization (Bandage)
 
-![Bandage Graph Single-Node Example](images/Bandage_singular_node.png)
-![Bandage Graph Full Example](images/Bandage_full.png)
+![Bandage node](images/Bandage_singular_node.png)  
+![Bandage full](images/Bandage_full.png)
 
 ---
 
@@ -376,9 +237,21 @@ Pp371/
 
 ---
 
+## SNAP HMM Training
+
+```
+maker2zff B71Ref2.gff3
+fathom genome.ann genome.dna -categorize 1000
+fathom uni.ann uni.dna -export 1000 -plus
+forge export.ann export.dna
+hmm-assembler.pl Moryzae . > Moryzae.hmm
+```
+
+---
+
 ## Gene Prediction Strategy
 
-Gene prediction was performed using multiple complementary approaches to improve accuracy and completeness.
+Gene prediction was performed using SNAP, AUGUSTUS, and MAKER.
 
 ---
 
@@ -386,7 +259,6 @@ Gene prediction was performed using multiple complementary approaches to improve
 
 ```
 snap-hmm Moryzae.hmm Pp371.fasta > Pp371-snap.zff
-
 snap-hmm Moryzae.hmm Pp371.fasta -gff > Pp371-snap.gff2
 ```
 
@@ -402,25 +274,69 @@ Pp371ID_final.fasta > Pp371ID-augustus.gff3
 
 ---
 
+## Gene Prediction Summary
+
+```
+grep -c "gene" Pp371-snap.gff2
+grep -c "gene" Pp371ID-augustus.gff3
+```
+
+| Tool | Predicted Genes |
+|------|----------------|
+| SNAP | TODO |
+| AUGUSTUS | TODO |
+
+---
+
 ## Genome Annotation with MAKER
 
 ```
-singularity exec /share/singularity/images/ccs/MAKER/amd-maker-debian10.sinf maker -CTL
-
-sbatch maker.sh path/to/Pp371ID_final.fasta
-
 gff3_merge -d Pp371ID_final.maker.output/Pp371ID_final_master_datastore_index.log
 -o Pp371ID-maker.gff3
 ```
 
 ---
 
-## IGV Visualization
+## MAKER Gene Prediction Summary
 
-![IGV Visualization](images/igv_view.png)
+```
+grep -c "gene" Pp371ID-maker.gff3
+grep -c ">" Pp371ID-maker.proteins.fasta
+```
+
+Results:
+- Predicted proteins: 12,990  
+
+---
+
+## IGV Gene Model Comparisons
+
+![snap only](images/igv_snap_only.png)  
+![aug only](images/igv_aug_only.png)  
+![same](images/igv_same.png)  
+![diff](images/igv_diff.png)  
+![full](images/igv_full.png)
+
+---
+
+## BLAST Analysis
+
+```
+blastn -query MoMitochondrion.fasta
+-subject Pp371_final.fasta
+-evalue 1e-50 -outfmt 6
+-out mito_blast.txt
+```
+
+Mitochondrial contigs were identified and removed.
+
+### Files
+
+- [BLAST Output](data/mito_blast.txt)
+- [Mitochondrial Contigs](data/mitochondrial_contigs.csv)
 
 ---
 
 ## Final Notes
 
-This repository documents a full genome analysis workflow from raw sequencing reads through genome assembly, gene prediction, and visualization.
+This repository documents a complete genome analysis workflow from raw reads through genome assembly, gene prediction, annotation, and validation.
