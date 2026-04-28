@@ -111,7 +111,7 @@ Pp371_2.fq.gz
 
 Reads were trimmed using Trimmomatic in paired-end mode.
 
-
+```
 java -jar trimmomatic.jar PE
 -phred33
 Pp371_1.fq.gz Pp371_2.fq.gz
@@ -119,7 +119,7 @@ Pp371_1_paired.fastq Pp371_1_unpaired.fastq
 Pp371_2_paired.fastq Pp371_2_unpaired.fastq
 ILLUMINACLIP:adaptors.fa:2:30:10
 SLIDINGWINDOW:20:20 MINLEN:125
-
+```
 
 ---
 
