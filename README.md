@@ -6,30 +6,30 @@ Quality control, trimming, de novo genome assembly, gene prediction, and genome 
 
 ## Table of Contents
 
-1. Project Overview  
-2. Raw Data Acquisition  
-3. Assess Sequence Quality  
-4. Sequence Trimming  
-5. Post-Trim Quality Assessment  
-6. Genome Assembly Strategy  
-7. K-mer Selection and Optimization  
-8. Velvet Assembly (Round 1)  
-9. Velvet Assembly (Round 2 Optimization)  
-10. SPAdes Assembly  
-11. Assembly Metrics Comparison  
-12. Read and Assembly Statistics  
-13. Assembly Graph Visualization (Bandage)  
-14. Directory Structure  
-15. SNAP HMM Training  
-16. Gene Prediction Strategy  
-17. Gene Prediction with SNAP  
-18. Gene Prediction with AUGUSTUS  
-19. Gene Prediction Summary  
-20. Genome Annotation with MAKER  
-21. MAKER Gene Prediction Summary  
-22. IGV Gene Model Comparisons  
-23. BLAST Analysis  
-24. Final Notes  
+1. [Project Overview](#project-overview)  
+2. [Raw Data Acquisition](#raw-data-acquisition)  
+3. [Assess Sequence Quality](#assess-sequence-quality)  
+4. [Sequence Trimming](#sequence-trimming)  
+5. [Post-Trim Quality Assessment](#post-trim-quality-assessment)  
+6. [Genome Assembly Strategy](#genome-assembly-strategy)  
+7. [K-mer Selection and Optimization](#k-mer-selection-and-optimization)  
+8. [Velvet Assembly (Round 1)](#velvet-assembly-round-1)  
+9. [Velvet Assembly (Round 2 Optimization)](#velvet-assembly-round-2-optimization)  
+10. [SPAdes Assembly](#spades-assembly)  
+11. [Assembly Metrics Comparison](#assembly-metrics-comparison)  
+12. [Read and Assembly Statistics](#read-and-assembly-statistics)  
+13. [Assembly Graph Visualization (Bandage)](#assembly-graph-visualization-bandage)  
+14. [Directory Structure](#directory-structure)  
+15. [SNAP HMM Training](#snap-hmm-training)  
+16. [Gene Prediction Strategy](#gene-prediction-strategy)  
+17. [Gene Prediction with SNAP](#gene-prediction-with-snap)  
+18. [Gene Prediction with AUGUSTUS](#gene-prediction-with-augustus)  
+19. [Gene Prediction Summary](#gene-prediction-summary)  
+20. [Genome Annotation with MAKER](#genome-annotation-with-maker)  
+21. [MAKER Gene Prediction Summary](#maker-gene-prediction-summary)  
+22. [IGV Gene Model Comparisons](#igv-gene-model-comparisons)  
+23. [BLAST Analysis](#blast-analysis)  
+24. [Final Notes](#final-notes)
 
 ---
 
