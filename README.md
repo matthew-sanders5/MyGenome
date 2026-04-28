@@ -37,7 +37,7 @@ This repository documents an end-to-end bioinformatics workflow for *Pyricularia
 
 ## Raw Data Acquisition
 
-Will add pub level detail
+Raw sequencing data for *Pp371* was obtained from the course dataset.
 
 ---
 
