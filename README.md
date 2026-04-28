@@ -242,6 +242,8 @@ Pp371_2_unpaired.fastq
 ## Genome Assembly Strategy
 *De novo* genome assembly was performed using both Velvet and SPAdes to compare assembly performance. Multiple k-mer sizes were tested to optimize contiguity and reduce fragmentation in the final assembly.
 
+---
+
 ## K-mer Selection and Optimization
 K-mer size was a critical parameter in de novo assembly, as it influenced both contig length and assembly accuracy. A range of k-mer values was tested to identify the optimal balance between contiguity and error reduction.
 ```
