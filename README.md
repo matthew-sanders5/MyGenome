@@ -332,8 +332,26 @@ Final assembly statistics indicated a high-quality genome assembly with strong c
 
 ## Assembly Graph Visualization (Bandage)
 
-![Bandage node](images/Bandage_singular_node.png)  
+Assembly graphs were visualized using Bandage to evaluate contig connectivity and overall assembly structure.
+
+<details>
+<summary><strong>View Bandage Graphs</strong></summary>
+
+<br>
+
+### Single Node View
+![Bandage node](images/Bandage_singular_node.png)
+
+This contig appears isolated with no branching, indicating a well-resolved region of the genome.
+
+---
+
+### Full Assembly Graph
 ![Bandage full](images/Bandage_full.png)
+
+The global assembly graph shows mostly disconnected nodes, suggesting fragmentation typical of short-read assemblies, alongside several larger connected components representing higher-contiguity regions.
+
+</details>
 
 ---
 
