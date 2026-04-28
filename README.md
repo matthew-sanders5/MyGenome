@@ -277,6 +277,26 @@ sbatch spades.sh . Pp371
 
 ---
 
+### N50 Calculation
+
+```
+#!/bin/bash
+grep -v ">" scaffolds.fasta | awk '{print length($0)}' | sort -nr > lengths.txt
+
+total=$(awk '{sum+=$1} END {print sum}' lengths.txt)
+half=$(echo "$total / 2" | bc)
+
+cumsum=0
+while read len; do
+cumsum=$((cumsum + len))
+if [ $cumsum -ge $half ]; then
+echo "N50: $len"
+break
+fi
+done < lengths.txt
+```
+---
+
 ## Read and Assembly Statistics
 
 ### Raw and Cleaned Read Summary
@@ -334,27 +354,6 @@ sbatch spades.sh . Pp371
 | Predicted proteins | 12,990 |
 | GFF deposited (MCC) | Yes |
 | Protein FASTA deposited (MCC) | Yes |
-
----
-
-### N50 Calculation
-
-```
-#!/bin/bash
-grep -v ">" scaffolds.fasta | awk '{print length($0)}' | sort -nr > lengths.txt
-
-total=$(awk '{sum+=$1} END {print sum}' lengths.txt)
-half=$(echo "$total / 2" | bc)
-
-cumsum=0
-while read len; do
-cumsum=$((cumsum + len))
-if [ $cumsum -ge $half ]; then
-echo "N50: $len"
-break
-fi
-done < lengths.txt
-```
 
 ---
 
