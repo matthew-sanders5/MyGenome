@@ -18,17 +18,17 @@ Quality control, trimming, de novo genome assembly, gene prediction, and genome 
 10. [SPAdes Assembly](#spades-assembly)  
 11. [Assembly Metrics Comparison](#assembly-metrics-comparison)  
 12. [Read and Assembly Statistics](#read-and-assembly-statistics)  
-13. [Assembly Graph Visualization (Bandage)](#assembly-graph-visualization-bandage)  
-14. [Directory Structure](#directory-structure)  
-15. [SNAP HMM Training](#snap-hmm-training)  
-16. [Gene Prediction Strategy](#gene-prediction-strategy)  
-17. [Gene Prediction with SNAP](#gene-prediction-with-snap)  
-18. [Gene Prediction with AUGUSTUS](#gene-prediction-with-augustus)  
-19. [Gene Prediction Summary](#gene-prediction-summary)  
-20. [Genome Annotation with MAKER](#genome-annotation-with-maker)  
-21. [MAKER Gene Prediction Summary](#maker-gene-prediction-summary)  
-22. [IGV Gene Model Comparisons](#igv-gene-model-comparisons)  
-23. [BLAST Analysis](#blast-analysis)  
+13. [Assembly Graph Visualization (Bandage)](#assembly-graph-visualization-bandage)
+14. [SNAP HMM Training](#snap-hmm-training)
+15. [Gene Prediction Strategy](#gene-prediction-strategy)
+16. [Gene Prediction with SNAP](#gene-prediction-with-snap)
+17. [Gene Prediction with AUGUSTUS](#gene-prediction-with-augustus)
+18. [Gene Prediction Summary](#gene-prediction-summary)
+19. [Genome Annotation with MAKER](#genome-annotation-with-maker)
+20. [MAKER Gene Prediction Summary](#maker-gene-prediction-summary)
+21. [IGV Gene Model Comparisons](#igv-gene-model-comparisons)
+22. [BLAST Analysis](#blast-analysis)
+23. [Directory Structure](#directory-structure)
 24. [Final Notes](#final-notes)
 
 ---
@@ -353,17 +353,6 @@ The global assembly graph shows mostly disconnected nodes, suggesting fragmentat
 
 </details>
 
----
-
-## Directory Structure
-
-```
-Pp371/
-├── data/
-├── code/
-├── images/
-└── results/
-```
 
 ---
 
@@ -467,6 +456,19 @@ Mitochondrial contigs were identified and removed.
 
 - [BLAST Output](data/mito_blast.txt)
 - [Mitochondrial Contigs](data/mitochondrial_contigs.csv)
+
+---
+
+
+## Directory Structure
+
+```
+Pp371/
+├── data/
+├── code/
+├── images/
+└── results/
+```
 
 ---
 
