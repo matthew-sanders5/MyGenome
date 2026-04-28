@@ -277,7 +277,65 @@ sbatch spades.sh . Pp371
 
 ---
 
-## Assembly Metrics Comparison
+## Read and Assembly Statistics
+
+### Raw and Cleaned Read Summary
+
+| Metric | Value |
+|------|------|
+| Raw reads (single-end equivalent) | 8,717,309 |
+| Cleaned paired reads used | 5,382,335 |
+| Total bases (cleaned paired reads) | 1,704,936,709 |
+| Estimated fold coverage | 41x |
+
+---
+
+### Assembly Optimization (Velvet)
+
+| Parameter | Genome Size | # Contigs | N50 |
+|----------|------------|----------|-----|
+| Step = 10 | 41,045,916 | 6,101 | 26,110 |
+| Step = 2 (optimized) | 42,160,640 | 5,895 | 28,079 |
+
+---
+
+### SPAdes Assembly
+
+| Assembly Type | Genome Size | # Contigs | N50 |
+|--------------|------------|----------|-----|
+| SPAdes (all reads) | 43,044,503 | 14,414 | 57,168 |
+| SPAdes (paired only) | 42,028,789 | 5,302 | 69,821 |
+
+---
+
+### Final Cleaned Assembly
+
+| Metric | Value |
+|------|------|
+| Genome size | 41,745,607 |
+| # contigs | 3,003 |
+| N50 | 69,820 |
+
+---
+
+### Assembly Quality (BUSCO)
+
+| Metric | Value |
+|------|------|
+| BUSCO completeness | 98.4% |
+| BUSCO complete + fragmented | 98.5% |
+
+---
+
+### Gene Prediction
+
+| Metric | Value |
+|------|------|
+| Predicted proteins | 12,990 |
+| GFF deposited (MCC) | Yes |
+| Protein FASTA deposited (MCC) | Yes |
+
+---
 
 ### N50 Calculation
 
